@@ -1,5 +1,6 @@
 package Task1;
 
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 
@@ -8,8 +9,9 @@ public class Main {
         File romeoAndJuliet = new File("romeo-and-juliet.txt");
 
         try (FileInputStream fis = new FileInputStream(romeoAndJuliet)) {
+            BufferedInputStream bis = new BufferedInputStream(fis);
             byte[] buffer = new byte[fis.available()];
-            fis.read(buffer);
+            bis.read(buffer);
             String romeoAndJulietText = new String(buffer);
 
             String cleanedText = cleanText(romeoAndJulietText);
