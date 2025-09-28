@@ -16,12 +16,14 @@ public class Main {
             String[] words = cleanedText.split(" ");
             int maxLength = 0;
             String wordMaxLength = "";
+
             for (String word : words) {
                 if (word.length() > maxLength) {
                     maxLength = word.length();
                     wordMaxLength = word;
                 }
             }
+
             System.out.println(wordMaxLength);
         } catch (Exception e) {
             e.printStackTrace();
